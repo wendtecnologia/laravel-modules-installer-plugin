@@ -12,8 +12,8 @@ class LaravelModulesInstaller extends LibraryInstaller
      */
     public function getInstallPath(PackageInterface $package)
     {
-        $module = explode('/',$package->getPrettyName());
-        echo $package->getPrettyName();
+        $name = $package->getName();
+        $module = explode('/',$name);
         if (strstr(array_pop($module),'-',true) !== 'module') {
             throw new \InvalidArgumentException(
                 'Unable to install module, laravel modules '
