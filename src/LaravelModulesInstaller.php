@@ -12,7 +12,8 @@ class LaravelModulesInstaller extends LibraryInstaller
      */
     public function getInstallPath(PackageInterface $package)
     {
-        $module = explode('/',$package);
+        $module = explode('/',$package->getPrettyName());
+        echo $package->getPrettyName();
         if (strstr(array_pop($module),'-',true) !== 'module') {
             throw new \InvalidArgumentException(
                 'Unable to install module, laravel modules '
@@ -21,7 +22,7 @@ class LaravelModulesInstaller extends LibraryInstaller
             );
         }
 
-        return 'app/Modules'.substr($package->getPrettyName(), 23);
+        return 'app/Modules/'.$package->getPrettyName();
     }
 
     /**
