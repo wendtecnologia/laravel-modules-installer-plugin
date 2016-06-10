@@ -1,0 +1,14 @@
+{
+    "name": "wend/laravel-modules-installer-plugin",
+    "type": "composer-plugin",
+    "license": "MIT",
+    "autoload": {
+        "psr-0": {"Wend\\Composer": "src/"}
+    },
+    "extra": {
+        "class": "Wend\\Composer\\LaravelModulesInstallerPlugin"
+    },
+    "require": {
+        "composer-plugin-api": "^1.0"
+    }
+}
