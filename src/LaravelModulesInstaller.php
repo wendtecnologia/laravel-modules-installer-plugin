@@ -21,8 +21,8 @@ class LaravelModulesInstaller extends LibraryInstaller
                 .'"<vendor>/module-"'
             );
         }
-
-        return 'app/Modules/'.str_replace('module-','',$vendorPkg[1]);
+        $name = str_replace(['Module-','-'],'', ucwords($vendorPkg[1], '-'));
+        return 'app/Modules/' . $name;
     }
 
     /**
