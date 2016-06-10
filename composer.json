@@ -3,7 +3,7 @@
     "type": "composer-plugin",
     "license": "MIT",
     "autoload": {
-        "psr-0": {"Wend\\Composer\\": "src/"}
+        "psr-4": {"Wend\\Composer\\": "src/"}
     },
     "extra": {
         "class": "Wend\\Composer\\LaravelModulesInstallerPlugin"
