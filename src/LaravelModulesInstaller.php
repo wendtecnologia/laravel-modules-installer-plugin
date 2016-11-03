@@ -8,25 +8,26 @@ use Composer\Installer\LibraryInstaller;
 class LaravelModulesInstaller extends LibraryInstaller
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getInstallPath(PackageInterface $package)
     {
         $name = $package->getPrettyName();
-        $vendorPkg = explode('/',$name);
-        if ( strstr($vendorPkg[1],'-',true) !== 'module') {
+        $vendorPkg = explode('/', $name);
+        if (strstr($vendorPkg[1], '-', true) !== 'module') {
             throw new \InvalidArgumentException(
                 'Unable to install module, laravel modules '
                 .'should always start their package name with '
                 .'"<vendor>/module-"'
             );
         }
-        $name = str_replace(['Module-','-'],'', ucwords($vendorPkg[1], '-'));
-        return 'app/Modules/' . $name;
+        $name = str_replace(['Module-', '-'], '', ucwords($vendorPkg[1], '-'));
+
+        return 'app/Modules/'.$name;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function supports($packageType)
     {
