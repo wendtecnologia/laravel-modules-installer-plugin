@@ -5,6 +5,11 @@
     "autoload": {
         "psr-4": {"Wend\\Composer\\": "src/"}
     },
+    "authors": [
+        {
+            "name": "Walker de Alencar"
+        }
+    ],
     "extra": {
         "class": "Wend\\Composer\\LaravelModulesInstallerPlugin"
     },
