@@ -12,5 +12,6 @@ class LaravelModulesInstallerPlugin implements PluginInterface
     {
         $installer = new LaravelModulesInstaller($io, $composer);
         $composer->getInstallationManager()->addInstaller($installer);
+
     }
 }
